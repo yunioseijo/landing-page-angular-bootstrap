@@ -8,16 +8,6 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
-export default class ProductsComponent implements OnInit {
-
-  loading: boolean = true;
-  _route = inject(ActivatedRoute);
-
-
-  ngOnInit(): void {
-    this._route.params.subscribe(params => {
-      console.log(params['id']);
-      });
-    }
+export default class ProductsComponent {
   
   }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products-details',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
   templateUrl: './products-details.component.html',
   styleUrl: './products-details.component.css'
 })
-export default class ProductsDetailsComponent {
+export default class ProductsDetailsComponent implements OnInit {
 
+  producto: string = '';
+  _route = inject(ActivatedRoute);
+
+
+  ngOnInit(): void {
+    this._route.params.subscribe(params => {
+      console.log('Nombre del producto',params);
+      this.producto = params['id'];
+
+      });
+    }
 }
