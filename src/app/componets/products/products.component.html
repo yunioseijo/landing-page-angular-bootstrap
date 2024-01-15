@@ -2,38 +2,27 @@
 <table class="table table-striped ">
     <thead>
       <tr>
+       
         <th scope="col">#</th>
-        <th scope="col">Producto</th>
+        <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
-        <th scope="col">Detalles</th>
+        <th scope="col">Descripción</th>
       </tr>
     </thead>
     <tbody>
+      @for (product of productsList; track product.id) {
       <tr>
-        <th scope="row">1</th>
-        <td>Lavandina</td>
-        <td>10</td>
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.price | currency : 'EUR' : 'symbol' :'1.2-2'}}</td>
+        <td>{{product.description}}</td>
         <td><button type="button" 
           class="btn btn-outline-primary" 
           [routerLink]="['/products', 'lavandina', 'red']">
           Detalles
         </button></td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Detergente</td>
-        <td>3</td>
-        <td><button type="button" class="btn btn-outline-primary" 
-          [routerLink]="['/products', 'Detergente', 'blue']">
-          Detalles</button></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td >Leche Condensada</td>
-        <td >3.89</td>
-        <td><button type="button" class="btn btn-outline-primary" 
-          [routerLink]="['/products', 'Leche Condensada', 'green']">
-          Detalles</button></td>
-      </tr>
+    }
+     
     </tbody>
   </table>
