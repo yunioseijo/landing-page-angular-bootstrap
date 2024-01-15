@@ -12,8 +12,9 @@ import { IProduct, productsList } from '../products/products.mock';
 })
 export default class ProductsDetailsComponent implements OnInit {
 
-  product?: IProduct;
-  listProducts: IProduct[]= productsList
+  product?    : IProduct;
+  listProducts: IProduct[]  = productsList
+  color       : string      =  '';
   
   _route = inject(ActivatedRoute);
 
@@ -22,6 +23,7 @@ export default class ProductsDetailsComponent implements OnInit {
     this._route.params.subscribe(params => {
       
       this.product = this.listProducts.find(prod => prod.id == params['id']);
+      this.color = this.product?.price as number > 5 ? 'red' : 'green';
       
 
       });
