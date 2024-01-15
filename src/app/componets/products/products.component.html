@@ -14,7 +14,7 @@
       <tr>
         <th scope="row">{{product.id}}</th>
         <td>{{product.name}}</td>
-        <td>{{product.price | currency : 'EUR' : 'symbol' :'1.2-2'}}</td>
+        <td [ngClass]="{'red':product.price > 5}">{{product.price | currency : 'EUR' : 'symbol' :'1.2-2'}}</td>
         <td>{{product.description}}</td>
         <td><button type="button" 
           class="btn btn-outline-primary" 
