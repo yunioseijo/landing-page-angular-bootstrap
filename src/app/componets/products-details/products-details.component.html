@@ -1,1 +1,13 @@
-<h2 [ngStyle]="{'background-color': category }">Detalles del Porducto: {{producto}}</h2>
+<div class="container">
+  
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{product?.name}}</h5>
+                <h4>Precio {{product?.price | currency }}</h4>
+                @if (product?.description) {
+                    <p class="card-text">Descripción: {{product?.description}}</p>
+                }
+            </div>
+        </div>
+        
+</div>

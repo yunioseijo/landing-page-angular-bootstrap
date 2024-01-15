@@ -1,4 +1,4 @@
-<h1>Productos de limpieza </h1>
+<h1 class="center">Productos de limpieza </h1>
 <table class="table table-striped ">
     <thead>
       <tr>
@@ -18,7 +18,7 @@
         <td>{{product.description}}</td>
         <td><button type="button" 
           class="btn btn-outline-primary" 
-          [routerLink]="['/products', 'lavandina', 'red']">
+          [routerLink]="['/products', product.id]">
           Detalles
         </button></td>
       </tr>
