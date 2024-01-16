@@ -1,28 +1,32 @@
-<h1 class="center">Productos de limpieza </h1>
+<div class="container ">
+  <h1 class="center">Productos de limpieza </h1>
 <table class="table table-striped ">
     <thead>
       <tr>
        
         <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Descripción</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+        <th scope="col">Category</th>
       </tr>
     </thead>
     <tbody>
       @for (product of productsList; track product.id) {
       <tr>
         <th scope="row">{{product.id}}</th>
-        <td>{{product.name}}</td>
-        <td [ngClass]="{'red':product.price > 5}">{{product.price | currency : 'EUR' : 'symbol' :'1.2-2'}}</td>
+        <td>{{product.title}}</td>
+        <td [ngClass]="{'red':product.price > 500}">{{product.price | currency : 'EUR' : 'symbol' :'1.2-2'}}</td>
         <td>{{product.description}}</td>
+        <td>{{product.category}}</td>
         <td><button type="button" 
           class="btn btn-outline-primary" 
           [routerLink]="['/products', product.id]">
-          Detalles
+          Details
         </button></td>
       </tr>
     }
      
     </tbody>
   </table>
+</div>

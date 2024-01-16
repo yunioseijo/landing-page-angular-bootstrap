@@ -2,10 +2,11 @@
   
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">{{product?.name}}</h5>
-                <h4 [ngStyle]="{'color': color}">Precio {{product?.price | currency }}</h4>
+                <img src="{{product?.thumbnail}}" class="card-img-top" alt="...">
+                <h5 class="card-title">{{product?.title}}</h5>
+                <h4 [ngStyle]="{'color': color}">Price {{product?.price | currency }}</h4>
                 @if (product?.description) {
-                    <p class="card-text">Descripción: {{product?.description}}</p>
+                    <p class="card-text">Description: {{product?.description}}</p>
                 }
             </div>
         </div>
