@@ -1,0 +1,18 @@
+h1 {
+    margin-bottom: 40px;
+}
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 100%;
+    margin-top: 1rem;
+    }
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+}
+.card{
+	margin-left: 10px;
+	margin-right: 10px;
+}
